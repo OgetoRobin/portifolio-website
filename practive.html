@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine 💖</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff4e50,#f9d423);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* Floating Hearts */
+.hearts-bg span{
+  position:absolute;
+  animation: floatUp 8s linear infinite;
+}
+@keyframes floatUp{
+  0%{transform:translateY(100vh) scale(0);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-10vh) scale(1.2);opacity:0;}
+}
+
+.card{
+  background:#fff;
+  width:95%;
+  max-width:420px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.3);
+  z-index:2;
+  animation:fadeIn 1s ease;
+}
+
+h1{color:#e91e63;}
+.flowers{font-size:28px;margin:10px 0;animation:pulse 2s infinite;}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:12px;
+  border:2px solid #e91e63;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border:none;
+  border-radius:12px;
+  background:#e91e63;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  background:#c2185b;
+}
+
+.secondary-btn{background:#ff9800;}
+.secondary-btn:hover{background:#e68900;}
+
+.music-control{
+  margin-top:10px;
+  cursor:pointer;
+  color:#555;
+  font-size:14px;
+}
+
+/* Romantic Popup */
+.love-popup{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility:hidden;
+  opacity:0;
+  transition:0.4s;
+  z-index:20;
+}
+
+.love-popup.active{
+  visibility:visible;
+  opacity:1;
+}
+
+.love-content{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  width:90%;
+  max-width:400px;
+  text-align:center;
+  animation:pop 0.5s ease;
+  box-shadow:0 0 25px #ff4081;
+}
+
+.love-text{
+  margin-top:15px;
+  font-size:15px;
+  line-height:1.7;
+  min-height:120px;
+}
+
+.word{
+  opacity:0;
+  display:inline-block;
+  animation:fadeWord 0.4s forwards;
+}
+
+@keyframes fadeWord{to{opacity:1;}}
+
+.close-btn{background:#4caf50;margin-top:10px;}
+
+.yes-btn{background:#4caf50;}
+.no-btn{background:#f44336;position:relative;}
+
+.sparkle{
+  position:fixed;
+  font-size:20px;
+  animation:floatUp 3s linear;
+}
+
+@keyframes pop{
+  from{transform:scale(0.6);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:scale(0.9);}
+  to{opacity:1;transform:scale(1);}
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts-bg"></div>
+
+<div class="card">
+  <h1>Happy Valentine 💖</h1>
+  <h1>i developed this website for your sake . 💖</h1>
+  <div class="flowers">🌹🌸💐🌷</div>
+
+  <input type="text" id="name" placeholder="Enter your first name 💕">
+  <input type="text" id="phone" placeholder="Enter your phone number 📱 start with R">
+
+  <button onclick="validateLove()">ChecK if you are my valentines 💌</button>
+  <button class="secondary-btn" onclick="showLuckyMessage()">Reveal Lucky Love ✨</button>
+
+  <div class="music-control" onclick="toggleMusic()">🎵 Play / Pause Music</div>
+</div>
+
+<!-- Romantic Popup -->
+<div class="love-popup" id="lovePopup">
+  <div class="love-content">
+    <h2>💖 My Valentine 💖</h2>
+    <div class="love-text" id="loveMessage"></div>
+    <button class="yes-btn" onclick="acceptLove()">YES 💕</button>
+    <button class="no-btn" onmouseover="moveNo(this)">NO 😜</button>
+    <button class="close-btn" onclick="closeLovePopup()">Close</button>
+  </div>
+</div>
+
+<!-- Background Music -->
+<audio id="music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Typing Sound -->
+<audio id="typingSound">
+  <source src="https://www.soundjay.com/mechanical/typewriter-key-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music=document.getElementById("music");
+const typingSound=document.getElementById("typingSound");
+
+/* Auto music */
+document.body.addEventListener("click",()=>{
+  music.volume=0.3;
+  music.play().catch(()=>{});
+},{once:true});
+
+function toggleMusic(){
+  music.paused?music.play():music.pause();
+}
+
+/* Floating hearts */
+setInterval(()=>{
+  const heart=document.createElement("span");
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=Math.random()*20+15+"px";
+  document.querySelector(".hearts-bg").appendChild(heart);
+  setTimeout(()=>heart.remove(),8000);
+},500);
+
+/* Validation */
+function validateLove(){
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const phonePattern=/^[0-9]{10}$/;
+
+  if(name===""){
+    alert("your name is required please jaber")
+    return
+  }
+   if(phone===""){
+    alert("your whatssapp number is required please babygarl!")
+    return
+  }
+if(name!=="milka"){
+  alert("its either you entered incorect name or you are not my valentine!Kindly confirm and try again")
+  return;
+}
+if(phone!=="R0116566729"){
+  alert("you have enterd incorect number or invalid format.kindly start with R and then proceed with you phone number.if the problem persit contact me")
+  return;
+}
+  showLovePopup(name);
+  confetti();
+}
+
+/* Romantic Popup */
+function showLovePopup(name){
+  const popup=document.getElementById("lovePopup");
+  const box=document.getElementById("loveMessage");
+
+  const text=`${name}, from the moment you smiled at me, my heart found its forever home. You are the warmth in my cold days and the happiness in my quiet nights.
+
+On this beautiful Valentine’s day, my sweet ${name}, I promise to cherish you, protect you, and love you endlessly. You are my today, tomorrow, and forever. 💕`;
+
+  box.innerHTML="";
+  popup.classList.add("active");
+
+  const words=text.split(" ");
+  words.forEach((word,i)=>{
+    const span=document.createElement("span");
+    span.className="word";
+    span.style.animationDelay=(i*0.15)+"s";
+    span.innerHTML=word+" ";
+    box.appendChild(span);
+    setTimeout(()=>typingSound.play(),i*150);
+  });
+
+  speak(text);
+}
+
+/* Voice */
+function speak(text){
+  const speech=new SpeechSynthesisUtterance(text);
+  speech.rate=0.85;
+  speech.pitch=1.2;
+  window.speechSynthesis.speak(speech);
+}
+
+function closeLovePopup(){
+  document.getElementById("lovePopup").classList.remove("active");
+  window.speechSynthesis.cancel();
+}
+
+/* Confetti */
+function confetti(){
+  for(let i=0;i<30;i++){
+    const conf=document.createElement("div");
+    conf.innerHTML="✨";
+    conf.className="sparkle";
+    conf.style.left=Math.random()*100+"vw";
+    conf.style.top="0";
+    document.body.appendChild(conf);
+    setTimeout(()=>conf.remove(),3000);
+  }
+}
+
+/* YES button */
+function acceptLove(){
+  alert("Awww 💕 You just made my heart the happiest!");
+  confetti();
+}
+
+/* Moving NO button */
+function moveNo(btn){
+  btn.style.position="absolute";
+  btn.style.left=Math.random()*200+"px";
+  btn.style.top=Math.random()*200+"px";
+}
+
+/* Lucky message */
+function showLuckyMessage(){
+  alert("Your love story is written in the stars 💖✨");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

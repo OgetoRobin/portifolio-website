@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Support Services</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#28a745;
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+header p{
+    opacity:0.9;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
+}
+
+.card{
+    background:#007bff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.4s ease;
+    backdrop-filter:blur(10px);
+}
+
+.card i{
+    font-size:40px;
+    margin-bottom:15px;
+    color:#00c6ff;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.15);
+}
+
+/* GALLERY */
+.gallery{
+    padding:40px;
+    text-align:center;
+}
+
+.gallery h2{
+    margin-bottom:20px;
+}
+
+.images{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.images img{
+    width:100%;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.images img:hover{
+    transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+    padding:50px 20px;
+    text-align:center;
+}
+
+.contact a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+.happy{
+    background:#25D366;
+    border-radius:8px; 
+     background:#111;
+}
+.email{
+    background:#0072ff;
+}
+
+.contact a:hover{
+    transform:scale(1.1);
+}
+
+/* LOCATION */
+.location{
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* FOOTER */
+footer{
+    background:#007bff;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🎓 Student & IT Support Services</h1>
+    <p>I assist university students and the public with Online Application & IT services professionally and reliably.</p>
+</header>
+
+<section class="services">
+    <div class="card">
+        <i class="fa-solid fa-id-card"></i>
+        <h3>KRA PIN Registration</h3>
+        <p>Quick KRA PIN registration and Nil Returns filing without stress.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>KUCCPS Applications</h3>
+        <p>Course revision and KUCCPS placement assistance.</p>
+      <p>Course and University application assistance.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <h3>HELB Applications</h3>
+      <p>First Time Application.</p>
+        <p>HELB loan application and follow-up guidance.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-brands fa-windows"></i>
+        <h3>Windows & Office Activation</h3>
+        <p>Permanent activation and system installation services.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-file-pdf"></i>
+        <h3>Admission Letters Download</h3>
+        <p>University and college admission letters download support.</p>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Other Related Services</h3>
+        <p>Cyber services, online applications & student support solutions.</p>
+    </div>
+</section>
+ <div class="happy">
+<section class="gallery">
+    <h2>👩‍🎓 Happy University Students</h2>
+    <div class="images">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="">
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1f3" alt="">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998" alt="">
+    </div>
+</section>
+
+<section class="contact">
+    <h2>📞 Contact Me</h2>
+    <p>Location: Homa Bay, Kenya</p>
+ <p>Location: Kisii and Nyamira Counties, Kenya</p>
+    <a href="https://wa.me/254703754836" class="whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <a href="mailto:ogeto783gmail@gmail.com" class="email">
+        <i class="fa-solid fa-envelope"></i> Email Me
+    </a>
+</section>
+
+<section class="location">
+    <h2>📍 Contact Me</h2>
+    <p>Available Any Time .  
+    Fast, reliable and student-friendly services.</p>
+</section>
+ </div>
+<footer>
+    © 2026 Student Support Services | All Rights Reserved
+</footer>
+
+</body>
+</html>

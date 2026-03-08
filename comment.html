@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comments</title>
+    <style></style>
+</head>
+<body>
+<style>
+    body{
+        justify-content: center;
+        justify-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+textarea{
+height: 80px;
+   width: 60%; 
+    resize:none ;
+    padding: 10px;
+    margin-top: px;
+}
+.comment{
+     background: white;
+    width: 90%;
+    max-width: 380px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+     box-shadow: 0 4px 10px rgb(0,0,0.2);
+
+}
+label {
+    font-weight: bold;
+    margin-top: 12px;
+    display: block;
+    font-size: 14px;
+}
+
+input { 
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #2ecc71;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit {
+    width: 20%;
+    margin-top: 25px;
+    padding: 12px;
+    background: #2038be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    
+}
+
+.submit:hover {
+    background: #1c45ce;
+}
+.clear {
+    width: 20%;
+    margin-top: 2px;
+    padding: 12px;
+    background: #2038be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 50%;
+}
+
+.clear:hover {
+    background: #1c45ce;
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #2038be;
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.c{
+    margin-left: 50%;
+}
+</style>
+
+    <div class="comment">
+    <form action="" id="commentform">
+<h2>Fill your feedback below and Submit</h2>
+<label for="">Enter your comment</label><br>
+<textarea name="" id="comments"  cols="50" rows="10" minlength="20"
+
+ placeholder="minimum length must be 20 characters" ></textarea><br>
+ <label >Upload document (optional)</label>
+ <input type="file" name="" id="file"> 
+<label >Enter your email/phone number</label> 
+<input type="email/number" name="" id="email" placeholder="📧example@email.com /phone number">
+<div>
+ <label > <input type="checkbox" name="" id="p"> By clicking here you agree with our terms and conditions</label>
+</div>
+<button id="btn"  class="submit"  type="submit"> Submit</button>
+<button class="clear" type="reset">Clear</button>
+    </form>
+    </div>
+    <script src="reset.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password reset</title>
+    <link rel="stylesheet" href="ternant.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo">
+
+<img src="logo.png" alt="">
+</div>
+    <h2>Password Reset</h2>
+    <form id="resetform">
+ <label> ID Number/</label>
+        <input type="text" id="id" placeholder="🆔National ID Number"/>
+
+        <label> Email Address</label>
+        <input type="email" id="email" placeholder="📧example@email.com">
+    
+        <button type="submit"  id="reset" class="btn">Reset</button>
+        <p id="error"></p>
+       
+        <footer>
+    <p>© 2026 Mobile-Based RHMS</p>
+</footer>
+
+    </form>
+</div>
+<!-- SUCCESS POPUP -->
+<div class="popup" id="popup2">
+<div class="popup-box">
+    <h3>Verify its you</h3>
+    <p>we have sent a verification code to your email</p>
+    <input type="text" name="" id="code" placeholder="Enter OTP code">
+    <button  class="close-btn"  onclick="verify()">Confirm</button>
+    <button  class="close-btn" onclick="closep()">close</button>
+     <p id="error"></p>
+    </div>
+</div>
+
+<script src="reset.js"></script>
+</body>
+</html>
+
+
+     

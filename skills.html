@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Robin Ogeto</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ===== ROOT ===== */
+:root{
+    --main: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    --accent:#36d1dc;
+    --secondary:#5b86e5;
+    --card:rgba(255,255,255,0.08);
+    --text:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--main);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:fixed;
+    left:-260px;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#111;
+    padding-top:60px;
+    transition:0.4s;
+    z-index:1000;
+}
+
+.sidebar a{
+    display:block;
+    padding:15px 25px;
+    color:#fff;
+    text-decoration:none;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.sidebar a:hover{
+    background:var(--accent);
+    padding-left:35px;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+/* ===== MENU BUTTON ===== */
+.menu-btn{
+    position:fixed;
+    top:15px;
+    left:15px;
+    font-size:22px;
+    color:#fff;
+    cursor:pointer;
+    z-index:1100;
+}
+
+/* ===== MAIN SECTION ===== */
+.container{
+    padding:70px 15px 30px 15px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* ===== HEADER ===== */
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    font-size:1.8rem;
+    color:var(--accent);
+}
+
+.header p{
+    font-size:0.9rem;
+    opacity:0.85;
+}
+
+/* ===== ABOUT CARD ===== */
+.about-card{
+    background:var(--card);
+    padding:20px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    margin-bottom:25px;
+    animation:fadeUp 1s ease;
+}
+
+.about-card h2{
+    margin-bottom:10px;
+    color:var(--secondary);
+}
+
+.about-card p{
+    font-size:0.9rem;
+    line-height:1.6;
+}
+
+/* ===== IMAGE INFO CARDS ===== */
+.gallery{
+    display:grid;
+    gap:15px;
+}
+
+.card{
+    background:var(--card);
+    border-radius:20px;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card-content h3{
+    margin-bottom:8px;
+    color:var(--accent);
+}
+
+.card-content p{
+    font-size:0.85rem;
+    line-height:1.6;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    margin-top:15px;
+    padding:10px;
+    width:100%;
+    border:none;
+    border-radius:8px;
+    background:var(--secondary);
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#36d1dc;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    margin-top:30px;
+    font-size:0.8rem;
+    opacity:0.7;
+}
+
+/* ===== DESKTOP ===== */
+@media(min-width:768px){
+    .gallery{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU ICON -->
+<div class="menu-btn" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+    <a href="#"><i class="fa fa-home"></i> Home</a>
+    <a href="#"><i class="fa fa-user"></i> About Me</a>
+    <a href="#"><i class="fa fa-code"></i> Projects</a>
+    <a href="#"><i class="fa fa-laptop"></i> Skills</a>
+    <a href="#"><i class="fa fa-briefcase"></i> Services</a>
+    <a href="#"><i class="fa fa-envelope"></i> Contact</a>
+</div>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>👨‍💻 About Me</h1>
+        <p>Passionate IT Developer | UI Designer | Problem Solver</p>
+    </div>
+
+    <!-- ABOUT TEXT -->
+    <div class="about-card">
+        <h2>Who I Am</h2>
+        <p>
+            I am Robin Ogeto, an Information Technology enthusiast focused on 
+            building secure, interactive and fully responsive systems. 
+            My goal is to design solutions that combine clean UI, strong 
+            backend logic, and user-friendly experiences.
+        </p>
+
+        <h2>What is IT?</h2>
+        <p>
+            Information Technology (IT) involves the use of computers, networks,
+            software and systems to store, process and manage information.
+            IT professionals develop applications, secure systems, manage databases,
+            design websites, and ensure digital communication runs efficiently.
+            IT drives innovation in education, healthcare, business, banking and government.
+        </p>
+    </div>
+
+    <!-- IMAGE INFO SECTION -->
+    <div class="gallery">
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg" alt="">
+            <div class="card-content">
+                <h3>🌐 Web Development</h3>
+                <p>
+                    Web development focuses on creating responsive websites 
+                    using HTML, CSS, and JavaScript. It ensures systems 
+                    are accessible, interactive, and mobile-friendly.
+                </p>
+                <button class="btn" onclick="alert('Web development powers the modern internet!')">Learn More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg" alt="">
+            <div class="card-content">
+                <h3>🔐 Cyber Security</h3>
+                <p>
+                    Cybersecurity protects systems and networks from digital attacks.
+                    It ensures data confidentiality, integrity and availability
+                    through encryption and secure authentication systems.
+                </p>
+                <button class="btn" onclick="alert('Security is the backbone of IT systems!')">Explore</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg" alt="">
+            <div class="card-content">
+                <h3>💾 Database Management</h3>
+                <p>
+                    Databases store and organize data efficiently.
+                    Technologies like MySQL and SQL Server help manage
+                    structured information securely and accurately.
+                </p>
+                <button class="btn" onclick="alert('Databases keep information organized!')">Discover</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 | Developed by Robin Ogeto
+    </footer>
+
+</div>
+
+<script>
+
+/* SIDEBAR TOGGLE */
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>

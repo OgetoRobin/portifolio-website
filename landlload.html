@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Login</title>
+    <link rel="stylesheet" href="ternant.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Landloard/Manager Login</h2>
+
+    <form id="loginForm">
+
+        <label> Email Address</label>
+        <input type="email" id="email" placeholder="📧example@email.com">
+
+       
+
+        <label> ID Number/</label>
+        <input type="text" id="idnumber" placeholder="🆔National ID Number"/>
+
+        <label>Enter Password</label>
+        <input type="password" id="password" placeholder="🔒 Confirm Password">
+
+       
+        <button type="submit" class="btn">Login</button>
+        <p id="error"></p>
+        <p>Dont have an Account? <a href="ternant.html">Create Account</a></p>
+
+        <p> <a href="">Forget Password</a></p>
+        <footer>
+    <p>© 2026 Mobile-Based Rental House Management System</p>
+    
+</footer>
+
+    </form>
+</div>
+<!-- SUCCESS POPUP -->
+<div class="success-popup" id="successPopup">
+    <div class="success-box">
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <circle cx="26" cy="26" r="25" fill="none"/>
+                <path fill="none" d="M14 27l7 7 17-17"/>
+            </svg>
+        </div>
+        <h3>Tenant</h3>
+        <p>Logged in successfully.</p>
+         
+        <button onclick="closeSuccess()">Continue</button>
+    </div>
+</div>
+
+<script src="ternant.js"></script>
+</body>
+</html>
+
+
+     
