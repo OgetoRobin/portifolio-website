@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Not Available</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+            color:white;
+            text-align:center;
+        }
+
+        .container{
+            max-width:500px;
+            padding:40px;
+            background:rgba(255,255,255,0.1);
+            border-radius:15px;
+            backdrop-filter: blur(10px);
+            box-shadow:0 10px 30px rgba(0,0,0,0.4);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1{
+            font-size:60px;
+            margin-bottom:10px;
+        }
+
+        h2{
+            margin-bottom:20px;
+        }
+
+        p{
+            margin-bottom:25px;
+            opacity:0.9;
+        }
+
+        button{
+            padding:12px 25px;
+            border:none;
+            border-radius:30px;
+            background:#00c6ff;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s ease;
+        }
+
+        button:hover{
+            background:#0072ff;
+            transform:scale(1.05);
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0; transform:translateY(20px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚧</h1>
+        
+        <h2> Updates  Not Yet Uploaded</h2>
+         <p>
+           Dear esteemed Customer ,you are seeing this error because no updates uploaded yet.Meanwhile go through the profile and share your feedback via whatsup or email.
+        </p>
+        <p>
+            This website is currently under development by the owner.
+            Please check back later. Thank you.
+        </p>
+
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
