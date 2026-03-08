@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Projects | Portfolio</title>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+    background:linear-gradient(135deg,#0f2027,#4c7d8d,#2c5364);
+    color:#fff;
+}
+h1{
+    color: aqua;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+    ;
+    font-weight: bold;
+}
+/* ===== SECTION ===== */
+.projects{
+    padding:40px 15px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* ===== HEADER ===== */
+.projects-header{
+    text-align:center;
+    margin-bottom:30px;
+    animation:fadeDown 1s ease;
+}
+
+.projects-header h1{
+    font-size:2.1rem;
+    margin-bottom:10px;
+}
+
+.projects-header p{
+    opacity:0.85;
+    font-size:0.95rem;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card{
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:25px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    animation:fadeUp 1.2s ease;
+}
+
+/* ===== IMAGE ===== */
+.project-img{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.project-img img{
+    width:100%;
+    height:auto;
+    transition:transform 0.6s ease;
+}
+
+.project-card:hover img{
+    transform:scale(1.1);
+}
+
+/* ===== CONTENT ===== */
+.project-content h2{
+    font-size:1.4rem;
+    margin-bottom:8px;
+}
+
+.project-content p{
+    font-size:0.95rem;
+    opacity:0.9;
+    line-height:1.5;
+}
+
+/* ===== TAGS ===== */
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:12px 0;
+}
+
+.tag{
+   background-color: rgb(62, 58, 88);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:0.75rem;
+}
+
+/* ===== BUTTONS ===== */
+.buttons{
+    display:flex;
+    gap:12px;
+    margin-top:10px;
+}
+
+.btn{
+    flex:1;
+    padding:12px;
+    border-radius:30px;
+    border:none;
+    font-size:0.85rem;
+    font-weight:600;
+    cursor:pointer;
+    color:#fff;
+    background:linear-gradient(135deg,#ff512f,#dd2476);
+    transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.btn.secondary{
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== ICON FLOAT ===== */
+.floating-icon{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#ff512f;
+    padding:10px;
+    border-radius:50%;
+    font-size:1rem;
+    animation:pulse 2s infinite;
+}
+.bt{
+    color: rgb(49, 20, 117);
+    background-color: #5b86e5;
+    width: 100%;
+    border-radius: 8px;
+}
+/* ===== DESKTOP ===== */
+@media(min-width:768px){
+    .project-card{
+        flex-direction:row;
+        align-items:center;
+    }
+    .project-img, .project-content{
+        flex:1;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,81,47,0.6);}
+    70%{box-shadow:0 0 0 15px rgba(255,81,47,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,81,47,0);}
+}
+</style>
+</head>
+
+<body>
+
+<section class="projects">
+
+    <div class="projects-header">
+        <h1>🚀 My Current Projects</h1>
+        <p>Innovative systems I am actively designing and developing</p>
+    </div>
+
+    <!-- RENTAL MANAGEMENT -->
+    <div class="project-card">
+        <div class="project-img">
+            <span class="floating-icon"><i class="fa-solid fa-building"></i></span>
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" alt="Rental Management">
+        </div>
+        <div class="project-content">
+           <a href="index2.html"><h2>Rental Management System</h2></a>
+            
+            <p>
+                A smart platform designed to manage tenants, rent payments,
+                property records, and reports efficiently using modern web technologies.
+            </p>
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+            </div>
+            <div class="buttons">
+                <button class="btn">View Concept</button>
+                <button class="btn secondary">In Progress</button>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- SCHOOL MANAGEMENT -->
+    <div class="project-card">
+        <div class="project-img">
+            <span class="floating-icon"><i class="fa-solid fa-school"></i></span>
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" alt="School Management">
+        </div>
+        <div class="project-content">
+            <a href="cbc.html"><h2>School Management System</h2></a>
+            <p>
+                A digital solution for managing students, teachers, attendance,
+                results, and communication in a secure and user-friendly environment.
+            </p>
+            <div class="tags">
+                <span class="tag">Web App</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">Security</span>
+                <span class="tag">Database</span>
+            </div>
+            <div class="buttons">
+                <button class="btn">Preview UI</button>
+                <button class="btn secondary">Development Stage</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+ <!-- students voting management system -->
+    <div class="project-card">
+        <div class="project-img">
+            <span class="floating-icon"><i class="fa-solid fa-school"></i></span>
+            <img src="img8.jpeg"  alt=" School Management">
+        </div>
+        <div class="project-content">
+           <a href=""> <h2>Voting Management System</h2></a>
+            <p>
+                A digital platforms for managing voting proceess.A secure sytem which will enhance transparency
+                fairness and efficiency.
+    secure and user-friendly to voters.
+            </p>
+            <div class="tags">
+                <span class="tag">Web App</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">Security</span>
+                <span class="tag">Database</span>
+            </div>
+            <div class="buttons">
+                <a href="">view</a>
+                <button class="btn">Preview UI</button>
+                <button class="btn secondary">Development Stage</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<script>
+// Small interaction animation
+document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Loading';
+        setTimeout(()=>{
+            btn.innerHTML = 'Coming Soon 🚧';
+        },1200);
+    });
+});
+</script>
+<footer> <p>© 2026 || Developed by Robin@Ogeto</p></footer>
+</body>
+</body>
+</html>
+
+
+

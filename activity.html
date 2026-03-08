@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Student Activities & Voting System</title>
+    <link rel="stylesheet" href="activity.css">
+</head>
+<body>
+<header>
+        <nav class="navbar">
+            <img class="logo" src="logo.png" alt="INFOTECT LOGO" >
+            <ul class="nav-links">
+                <li><a href="new2.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="portal2.php">Login</a></li>
+                <li><a href="PORTAl.php">Create Account</a></li>
+                 <li><a href="#">Retrieve your Account</a></li>
+            </ul>
+        </nav>
+         <h1 class="fade-in"><strong>CBE</strong> Digital Platform</h1>
+         <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Competence Based education</h2>
+    <p class="fade-in">Voting System • Sports • Learning Environment</p>
+    </header>
+
+    
+<!-- Activities Section -->
+<section class="activities">
+
+    <!-- Top Row (2 images) -->
+    <div class="row">
+        <div class="card slide-up">
+            <div class="img-box"><img src="img8.jpeg" alt="" ></div>
+            <h3>Student Voting System</h3>
+            <p>
+                Secure student elections<br>
+                Fair and transparent voting<br>
+                Powered by IT
+            </p>
+            <button onclick="openVoting()">Vote Now</button>
+        </div>
+
+        <div class="card slide-up delay1">
+            <div class="img-box">Sports <img src="img9.jpeg" alt="" ></div>
+            <h3>Sports Activities</h3>
+            <p>
+                Teamwork and discipline<br>
+                Physical fitness<br>
+                Talent development
+            </p>
+              <a href="activity.php"> <button> Join Our Team</button></a>    
+        </div>
+    </div>
+
+    <!-- Bottom Row (1 image) -->
+    <div class="row center-row">
+        <div class="card slide-up delay2">
+            <div class="img-box"><img src="img1.jpeg" alt="" ></div>
+            <h3>Learning Environment</h3>
+            <p>
+                Technology-based learning<br>
+                Supportive environment<br>
+                Future-focused education
+            </p>
+             <a href="PORTAl.php"> <button> Join Our Team</button></a>   
+        </div>
+    </div>
+</section>
+
+<!-- Voting Popup -->
+<div class="popup" id="votingPopup">
+   <div class="popup-box">
+        <h3>Student Voter Verification</h3>
+
+        <input type="text" id="regNo" placeholder="Enter Registration Number">
+        <input type="text" id="studentName" placeholder="Enter Your Name">
+ 
+        <button onclick="verifyVoter()">Verify & Vote</button>
+        <button class="close-btn" onclick="closeVoting()">Close</button>
+
+        <p id="response"></p>
+    </div>
+</div>
+
+<script src="java.js"></script>
+<h2 style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;color: yellow;
+">For more infomation contact Us</h2>
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+<section class="contact-section">
+    
+    <div class="contact-container">
+        <a href="mailto:ogeto783@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>Email Us</span>
+        </a>
+
+        <a href="https://wa.me/254101884031" class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+
+        <a href="#" class="contact-item">
+            <i class="fab fa-facebook"></i>
+            <span>Facebook</span>
+        </a>
+
+        <a href="tel:+254101" class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>Phone</span>
+        </a>
+    </div>
+</section>
+
+ <footer>
+        <p>© 2026 School Management System | Designed by Robin @ogeto</p>
+    </footer>
+
+</body>
+</html>
