@@ -219,7 +219,9 @@ footer{
 }
 h3{
     color: #3d24cf;
-
+     
+ text-align: center;
+     margin-top: 5px;
 }
 
 h3{
@@ -260,3 +262,4 @@ align-items: center;
     0%{width: 0;}
     100%{width: 100%;}
 }
+
