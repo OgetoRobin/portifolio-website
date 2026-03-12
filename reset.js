@@ -40,7 +40,7 @@ function verify() {
 
     if (code === "" ) {
         alert("OTP code is required!");
-    } else if (code.length < 5) {
+    } else if (code!= 5271) {
          alert(" Invalid OTP code!");
     } else {
        
@@ -119,5 +119,6 @@ document.getElementById("btn").style.display="flex"
 
          });
 });
+
 
 
