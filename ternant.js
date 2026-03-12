@@ -51,9 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
             alert( "Passwords do not match.");
             return;
         }
-    document.getElementById("successPopup").style.display = "flex";
+         document.getElementById("loader").style.display="flex";
+          setTimeout(function(){
+        document.getElementById("loader").style.display="none";    
+document.getElementById("successPopup").style.display = "flex";
 
- return;
+          } ,5000)
+
+          
+   
  
 
        // error.style.color = "green";
@@ -180,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function closeSuccess() {
     document.getElementById("successPopup").style.display = "none";
 }
+
 
 
 
