@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landloard Registration</title>
+    <link rel="stylesheet" href="ternant.css">
+</head>
+<body>
+
+<div class="login-container">
+     <div class="logo">
+
+<img src="erentlogo.png" alt="">
+</div>
+   
+
+    <form id="tenantForm">
+ <h2>Landlord Registation</h2>
+        <label> Email Address</label>
+        <input type="email" id="email" placeholder="📧example@email.com">
+
+        <label> Phone Number</label>
+        <input type="tel" id="phone1" placeholder="📱07XXXXXXXX">
+
+       
+
+        <label> ID Number</label>
+        <input type="text" id="idnumber" placeholder="🆔National ID Number">
+         <p id="errorid"></p>
+        <label> Password</label>
+        <input type="password" id="password" placeholder="🔒 Confirm Password">
+
+        <label> Confirm Password</label>
+        <input type="password" id="confirmpassword" placeholder="🔒 Confirm Password">
+        <div> 
+            <input type="hidden">
+        </div>
+<p id="error"></p>
+        <button  type="submit" class="btn">Register</button>
+        
+        <p>Already have an Account? <a href="login.html">Login</a></p>
+        <div id="loader">
+            <div class="loaderbox">
+            <p>Processing your registration...</p>
+            <div class="progressbar">
+            <div class="progress"></div>
+            </div>
+        </div>
+        </div>
+<footer>
+    <p>© 2026 Mobile-Based RHMS</p>
+    
+</footer>
+
+    </form>
+</div>
+<!-- SUCCESS POPUP -->
+<div class="success-popup" id="successPopup">
+    <div class="success-box">
+        <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+                <circle cx="26" cy="26" r="25" fill="none"/>
+                <path fill="none" d="M14 27l7 7 17-17"/>
+            </svg>
+        </div>
+        <h3>Success!</h3>
+        <h4>Account Created Successfull</h4>
+        <p>Your property Owner account has been created.Please 
+        check your email for important information about your account and proceed with 
+        registration.Thank you</p>
+        
+        <button onclick="closeSuccess()">Continue</button>
+    </div>
+</div>
+
+<script src="ternant.js"></script>
+</body>
+</html>
+
+
+     
