@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 10px 0 20px;
+      color: #cbd5f5;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+    }
+
+    /* Small devices */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <p>Oops! This page doesn’t exist.</p>
+    <a href="/portfolio-website/" class="btn">Go Home</a>
+  </div>
+</body>
+</html>
