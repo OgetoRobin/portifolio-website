@@ -259,11 +259,72 @@ footer{
         margin-top:10px;
     }
 }
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    left:-250px;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#002b5c;
+    padding:20px;
+    transition:0.4s;
+    z-index:1000;
+}
+
+.sidebar h2{
+    color:#ffd700;
+    margin-bottom:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:15px 0;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    color:#ffd700;
+    padding-left:10px;
+}
+
+/* MENU BUTTON */
+.menu-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    background:#ffd700;
+    border:none;
+    padding:10px;
+    border-radius:5px;
+    cursor:pointer;
+    z-index:1100;
+} 
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 20px rgba(255,215,0,0.5);
+}
+.card button:active{
+    transform:scale(0.95);
+}    
 </style>
 </head>
 
 <body>
+<div class="sidebar" id="sidebar">
+    <h2>Student Panel</h2>
+    <a href="#"><i class="fas fa-user-graduate"></i> Profile</a>
+    <a href="#"><i class="fas fa-book"></i> Academics</a>
+    <a href="#"><i class="fas fa-vote-yea"></i> Voting</a>
+    <a href="#"><i class="fas fa-futbol"></i> Sports</a>
+    <a href="#"><i class="fas fa-chart-line"></i> Results</a>
+</div>
 
+<button class="menu-btn" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+</button>
 <header>
     <nav class="navbar">
         <img src="logo.png" class="logo">
@@ -341,7 +402,17 @@ footer{
     © 2026 School Management System | Designed by Robin @ogeto
 </footer>
 
-<script>
+<script> 
+ 
+function toggleSidebar(){
+    let sidebar = document.getElementById("sidebar");
+    if(sidebar.style.left === "0px"){
+        sidebar.style.left = "-250px";
+    } else {
+        sidebar.style.left = "0px";
+    }
+}
+   
 function openVoting(){
     document.getElementById("votingPopup").style.display="flex";
 }
