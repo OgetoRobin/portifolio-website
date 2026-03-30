@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Phone validation
         if (phonenumber.length < 10) {
-            alert("Enter a valid Number! Phone number must be at least 10 digits.");
+            error.textContent="Enter a valid Number! Phone number must be at least 10 digits.";
             return;
         }
 
