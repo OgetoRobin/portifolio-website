@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        let message = `Dear ${name} your request to join Us has be received! We have sent a login instructions to <strong>${email}</strong>. Please check your email to start our session.Thank you.`;  
+        let message = `Dear ${name} your request to join Us has be received! We have sent a login instructions to ${email}. Please check your email to start our session.Thank you.`;  
               document.getElementById("successMessage").innerText = message;
         // SUCCESS
         document.getElementById("successPopup").style.display = "flex";
