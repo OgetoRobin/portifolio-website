@@ -53,7 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
          document.getElementById("loader").style.display="flex";
           setTimeout(function(){
-        document.getElementById("loader").style.display="none";    
+        document.getElementById("loader").style.display="none"; 
+
+        let message = `Dear Tenant, your registration is successful! We have sent a login instructions to ${email}. Please check your email to continue registration.`;  
+              document.getElementById("successMessage").innerText = message;
+
 document.getElementById("successPopup").style.display = "flex";
 
           } ,5000)
