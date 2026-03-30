@@ -150,9 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Check empty fields
         
             
-        // Email validation
-        if (name===""{
-            error.textContent = "Enter a valid email address.";
+        if (name==="") {
+    error.textContent = "Enter a valid email address.";
             return;
         }
 
@@ -187,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        let message = `Dear <strong>${name}</strong> your request to join Us has be received! We have sent a login instructions to <strong>${email}</strong>. Please check your email to start our session.Thank you.`;  
+        let message = `Dear ${name} your request to join Us has be received! We have sent a login instructions to <strong>${email}</strong>. Please check your email to start our session.Thank you.`;  
               document.getElementById("successMessage").innerText = message;
         // SUCCESS
         document.getElementById("successPopup").style.display = "flex";
