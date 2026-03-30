@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
 
         const email = document.getElementById("email").value.trim();
+        const name = document.getElementById("name").value.trim();
         const phonenumber = document.getElementById("phonenumber").value.trim();
         const area = document.getElementById("area").value.trim();
         const password1 = document.getElementById("password1").value;
@@ -147,26 +148,29 @@ document.addEventListener("DOMContentLoaded", function () {
         error.style.color = "red";
 
         // Check empty fields
-        if (email === "" || phonenumber === "" || area === "" || password1 === "" || password2 === "") {
-            alert("Please fill in all the fields before you submit!");
+        
+            
+        // Email validation
+        if (name===""{
+            error.textContent = "Enter a valid email address.";
             return;
         }
 
         // Email validation
         if (!email.includes("@") || !email.includes(".")) {
-            error.textContent = "Enter a valid email address.";
+            error.textContent = "Your name is required.";
             return;
         }
 
         // Phone validation
         if (phonenumber.length < 10) {
-            alert("Invalid Number! Phone number must be at least 10 digits.");
+            alert("Enter a valid Number! Phone number must be at least 10 digits.");
             return;
         }
 
         // area validation
         if (area === "") {
-            alert("Please specify at least one area of interest before you submit.");
+            alert("Please specify at least one area of interest then you proceed.");
             return;
         }
 
@@ -182,6 +186,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        
+        let message = `Dear <strong>${name}</strong> your request to join Us has be received! We have sent a login instructions to <strong>${email}</strong>. Please check your email to start our session.Thank you.`;  
+              document.getElementById("successMessage").innerText = message;
         // SUCCESS
         document.getElementById("successPopup").style.display = "flex";
     });
