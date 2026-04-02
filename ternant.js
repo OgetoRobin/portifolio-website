@@ -139,7 +139,7 @@ form.addEventListener("submit", function (e) {
         const email = document.getElementById("email").value.trim();
         const name = document.getElementById("name").value.trim();
         const phonenumber = document.getElementById("phonenumber").value.trim();
-        const area = document.getElementById("area").value.trim();
+        const message = document.getElementById("message").value.trim();
         const password1 = document.getElementById("password1").value;
         const password2 = document.getElementById("password2").value;
         const error = document.getElementById("error");
@@ -150,13 +150,13 @@ form.addEventListener("submit", function (e) {
         
             
         if (name==="") {
-    error.textContent = "Enter a valid email address.";
+    error.textContent = "Enter a valid Name.";
             return;
         }
 
         // Email validation
         if (!email.includes("@") || !email.includes(".")) {
-            error.textContent = "Your name is required.";
+            error.textContent = "Your email is required.";
             return;
         }
 
@@ -187,18 +187,25 @@ const params = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
     message: document.getElementById("message").value
-  };
+    
+}
+ };
 
   emailjs.send("service_3eah78g", "template_iq81db7", params)
     .then(function(response) {
-      alert("Email sent successfully!");
-    }, function(error) {
-      alert("Failed to send email");
         
         let message = `Dear ${name} your request to join Us has be received! We have sent a login instructions to ${email}. Please check your email to start our session.Thank you.`;  
               document.getElementById("successMessage").innerText = message;
         // SUCCESS
         document.getElementById("successPopup").style.display = "flex";
+    
+      
+    }, 
+        
+      function(error) {
+
+    // ❌ ERROR
+    alert("Failed to send email. Try again.");
     });
 });
 
