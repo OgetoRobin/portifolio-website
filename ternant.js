@@ -133,7 +133,7 @@ function closeSuccess() {
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("joinform");
-service_3eah78gentListener("submit", function (e) {
+form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const email = document.getElementById("email").value.trim();
