@@ -133,8 +133,7 @@ function closeSuccess() {
 document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("joinform");
-
-    form.addEventListener("submit", function (e) {
+service_3eah78gentListener("submit", function (e) {
         e.preventDefault();
 
         const email = document.getElementById("email").value.trim();
@@ -190,7 +189,7 @@ const params = {
     message: document.getElementById("message").value
   };
 
-  emailjs.send("YOUR_SERVICE_ID", "template_iq81db7", params)
+  emailjs.send("service_3eah78g", "template_iq81db7", params)
     .then(function(response) {
       alert("Email sent successfully!");
     }, function(error) {
