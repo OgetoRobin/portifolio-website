@@ -184,11 +184,10 @@ form.addEventListener("submit", function (e) {
             return;
         }
 const params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value
-    
-}
+    name: name,
+    email: email,
+    message: message
+
  };
 
   emailjs.send("service_3eah78g", "template_iq81db7", params)
@@ -200,7 +199,7 @@ const params = {
         document.getElementById("successPopup").style.display = "flex";
     
       
-    }, 
+    })
         
       function(error) {
 
