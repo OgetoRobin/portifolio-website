@@ -184,7 +184,17 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Passwords do not match.");
             return;
         }
+const params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
 
+  emailjs.send("YOUR_SERVICE_ID", "template_iq81db7", params)
+    .then(function(response) {
+      alert("Email sent successfully!");
+    }, function(error) {
+      alert("Failed to send email");
         
         let message = `Dear ${name} your request to join Us has be received! We have sent a login instructions to ${email}. Please check your email to start our session.Thank you.`;  
               document.getElementById("successMessage").innerText = message;
