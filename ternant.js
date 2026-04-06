@@ -167,7 +167,7 @@ form.addEventListener("submit", function (e) {
         }
 
         // area validation
-        if (area === "") {
+        if (message === "") {
             alert("Please specify at least one area of interest then you proceed.");
             return;
         }
@@ -190,21 +190,20 @@ const params = {
 
  };
 
-  emailjs.send("service_3eah78g", "template_iq81db7", params)
-    .then(function(response) {
-        
-        let message = `Dear ${name} your request to join Us has be received! We have sent a login instructions to ${email}. Please check your email to start our session.Thank you.`;  
-              document.getElementById("successMessage").innerText = message;
-        // SUCCESS
-        document.getElementById("successPopup").style.display = "flex";
-    
+ emailjs.send("service_3eah78g", "template_iq81db7", params)
+.then(function(response) {
+
+    let message = `Dear ${name} your request to join Us has been received! We have sent login instructions to ${email}. Please check your email. Thank you.`;  
+
+    document.getElementById("successMessage").innerText = message;
+    document.getElementById("successPopup").style.display = "flex";
+
+}, function(error) {
+    alert("Failed to send email. Try again.");
       
     })
         
-      function(error) {
-
-    // ❌ ERROR
-    alert("Failed to send email. Try again.");
+    
     });
 });
 
