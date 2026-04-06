@@ -68,7 +68,11 @@ const params = {
     
       
     })
-        
+      function(error) {
+
+    console.log("FAILED:", error); // 🔥 THIS WILL SHOW REAL ISSUE
+    alert("Email failed: " + JSON.stringify(error));
+   
       
     });
 });
