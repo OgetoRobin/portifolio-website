@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Sending email...", params);
 
         // ✅ Send email
-        emailjs.send("service_3eah78g", "template_iq81db7", params)
+        emailjs.send("service_3eah78g", "template_q0gp09d", params)
         .then(function (response) {
 
             console.log("SUCCESS:", response);
