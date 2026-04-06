@@ -35,7 +35,7 @@ form.addEventListener("submit", function (e) {
         }
 
         // area validation
-        if (area === "") {
+        if (message === "") {
             alert("Please specify at least one area of interest then you proceed.");
             return;
         }
