@@ -89,7 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Failed to send email. Check console (F12).");
 
         });
-
+2️⃣ Send auto-reply to user
+    emailjs.sendForm('service_3eah78g', 'template_jidvfpn', this)
+      .then(function() {
+          alert('Auto-reply sent to user!');
+      }, function(error) {
+          console.log('Failed to send auto-reply:', error);
     });
 });
 
