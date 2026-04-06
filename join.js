@@ -90,11 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-    emailjs.sendForm('service_3eah78g', 'template_jidvfpn', this)
-      .then(function() {
-          alert('Auto-reply sent to user!');
-      }, function(error) {
-          console.log('Failed to send auto-reply:', error);
+    
     });
 });
 
