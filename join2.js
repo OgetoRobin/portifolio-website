@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Admin email sent:", response);
 
             // 2️⃣ Send auto-reply
-            return emailjs.send("service_3eah78g", "template_autoreply123", params);
+            return emailjs.send("service_3eah78g", "template_jidvfpn", params);
 
         })
 
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("loader").style.display = "none";
 
             console.log("FAILED:", error);
-            alert("Failed to send email. Check console.");
+            alert("Failed to send email.Client should contact the system owner.If you're the Admin please check console.");
 
         });
 
