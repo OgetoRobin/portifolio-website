@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("loader").style.display = "none";
 
-                const successMsg = `Dear ${name}, your request has been received! Check ${email} for confirmation.`;
+                const successMsg = `Dear ${name}, 🎉 Welcome Aboard!,your Details as been received! Check ${email} for confirmation.🚧 Note: Saa hii site iko kwa testing kidogo, so ukiona vitu ziko tofauti ama kuna ka-issue hapa na pale, usishtuke 😄 tunaboresha experience yako..`;
 
                 document.getElementById("successMessage").innerText = successMsg;
                 document.getElementById("successPopup").style.display = "flex";
