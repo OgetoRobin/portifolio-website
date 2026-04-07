@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const name = document.getElementById("name").value.trim();
         const phonenumber = document.getElementById("phonenumber").value.trim();
         const message = document.getElementById("message").value.trim();
-        const password1 = document.getElementById("password1").value;
-        const password2 = document.getElementById("password2").value;
+        
         const error = document.getElementById("error");
 
         error.style.color = "red";
@@ -38,19 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (message === "") {
-            alert("Please specify your area of interest.");
+            alert("Please tell us something about you before you proceed.");
             return;
         }
 
-        if (password1.length < 6 || !password1.includes("@")) {
-            error.textContent = "Password must be at least 6 characters and include '@'.";
-            return;
-        }
-
-        if (password1 !== password2) {
-            alert("Passwords do not match.");
-            return;
-        }
+        
 
         const params = { name, email, message };
 
@@ -77,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("loader").style.display = "none";
 
-                const successMsg = `Dear ${name}, 🎉 Welcome Aboard!,your Details as been received! Check ${email} for confirmation.🚧 Note: Saa hii site iko kwa testing kidogo, so ukiona vitu ziko tofauti ama kuna ka-issue hapa na pale, usishtuke 😄 tunaboresha experience yako..`;
+                const successMsg = `Dear ${name}, 🎉 Welcome Aboard!,your Details as been received! Please check your email${email} for confirmation.🚧 Note: Saa hii site iko kwa testing kidogo, so ukiona vitu ziko tofauti ama kuna ka-issue hapa na pale, usishtuke 😄 tunaboresha experience yako..`;
 
                 document.getElementById("successMessage").innerText = successMsg;
                 document.getElementById("successPopup").style.display = "flex";
@@ -93,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("loader").style.display = "none";
 
             console.log("FAILED:", error);
-            alert("Failed to send email.Client should contact the system owner.If you're the Admin please check console.");
+            alert("Failed to send email.Please confirm whether your entered correct email and try again.If the problem persist contact the Admin (F12).");
 
         });
 
