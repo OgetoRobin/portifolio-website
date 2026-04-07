@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Passwords do not match.");
             return;
         }
+        document.getElementById("loader").style.display="flex";
+          setTimeout(function(){
+        document.getElementById("loader").style.display="none"; 
 
         // ✅ EmailJS parameters
         const params = {
