@@ -226,7 +226,7 @@ footer{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
+.body1{
     background: #0f172a;
     color: #fff;
     display: flex;
