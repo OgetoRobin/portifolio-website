@@ -1,0 +1,360 @@
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R-Tech Solution</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <img src="logo.png" class="logo" alt="Logo">
+
+    <h1>R-TECH SOLUTION</h1>
+    <p class="p1">Passionate About Technology and Innovation.</p>
+
+    <div class="nav-btns">
+        <a href="new.html" class="btn">My Projects</a>
+        <a href="skills.html" class="btn">About Me</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="slider">
+    <div class="slides active" style="background-image:url('me.png');"></div>
+
+    <div class="overlay">
+        <h2>Future-oriented IT professional driven by curiosity and creativity</h2>
+
+        <p>
+            I am a passionate Information Technology student with strong interest in
+            software development, cybersecurity, web design and modern digital solutions.
+        </p>
+
+        <a href="error.html" class="btn">Upcoming Updates</a>
+        <a href="join.html" class="btn">Join Me Today</a>
+        <a href="aboutme.html" class="btn">Products</a>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="categories">
+    <div class="card">
+        <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg" alt="">
+        <h3>Enthusiastic about transforming ideas into functional digital experience.</h3>
+        <p>Creativity and Innovation.</p>
+        <a href="services.html" class="btn">Services</a>
+    </div>
+</section>
+
+<!-- ACTIVITY -->
+<section class="body1">
+<div class="container">
+
+<h1 class="title">Activity Section</h1>
+
+<div class="card1">
+<h2>About Me</h2>
+<p>
+Passionate developer focused on creating clean, responsive and user-friendly solutions.
+</p>
+<a href="about.html" class="button">About</a>
+</div>
+
+<div class="card1">
+<h2>My Products and Services</h2>
+<p>
+I offer a variety of services, especially student support and online applications.
+</p>
+<a href="services.html" class="button">Services</a>
+</div>
+
+<div class="card1">
+<h2>Skills and Technologies</h2>
+<p>
+Front-end and back-end web development using HTML, CSS, JavaScript and databases.
+</p>
+<a href="skill.html" class="button">Visit</a>
+</div>
+
+<div class="card1">
+<h2>Contact Information</h2>
+<p>
+Open for collaboration and project opportunities.
+</p>
+<a href="join.html" class="button">Contact Us</a>
+</div>
+
+</div>
+</section>
+
+<!-- DESCRIPTION -->
+<section class="description">
+<h2>Why Choose Information Technology?</h2>
+<p>
+Technology can transform lives and improve efficiency in every sector.
+</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+
+<h2 class="section-title">Tech Career Exploration</h2>
+
+<div class="contact-container">
+
+<a href="mailto:ogeto783@gmail.com" class="contact-item">
+<i class="fas fa-envelope"></i>
+<span>Email Us</span>
+</a>
+
+<a href="https://wa.me/254101884031" class="contact-item">
+<i class="fab fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
+
+<a href="#" class="contact-item">
+<i class="fab fa-facebook"></i>
+<span>Facebook</span>
+</a>
+
+<a href="tel:+254101" class="contact-item">
+<i class="fas fa-phone"></i>
+<span>Phone</span>
+</a>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 R-Tech | Developed by Robin@ogeto</p>
+</footer>
+
+</body>
+</html>
+```
+
+---
+
+## style.css
+
+```css
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f6f8;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,#1e90ff,#00c6ff);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.logo{
+    width:130px;
+    height:80px;
+    border-radius:50px;
+    object-fit:cover;
+}
+
+.p1{
+    color:#ff9c00;
+    margin:10px 0;
+    font-weight:bold;
+}
+
+.nav-btns{
+    margin-top:15px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    margin:5px;
+    background:#0a27cc;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+/* HERO */
+.slider{
+    height:70vh;
+    position:relative;
+}
+
+.slides{
+    height:100%;
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+    position:absolute;
+    top:50%;
+    left:5%;
+    transform:translateY(-50%);
+    max-width:600px;
+    color:white;
+}
+
+.overlay h2{
+    color:#00ff88;
+    margin-bottom:15px;
+}
+
+/* SECTION */
+.categories,
+.description{
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* DARK SECTION */
+.body1{
+    background:#0f172a;
+    color:white;
+    padding:30px 20px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.card1{
+    background:rgba(255,255,255,.05);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.card1 h2{
+    color:#3b82f6;
+    margin-bottom:10px;
+}
+
+.card1 p{
+    color:#cbd5e1;
+}
+
+.button{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#0891b2;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+.button:hover{
+    background:#2563eb;
+}
+
+/* CONTACT */
+.contact-section{
+    padding:40px 20px;
+    background:green;
+}
+
+.section-title{
+    text-align:center;
+    color:gold;
+    margin-bottom:30px;
+}
+
+.contact-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contact-item{
+    color:white;
+    text-decoration:none;
+    text-align:center;
+}
+
+.contact-item i{
+    font-size:30px;
+    color:gold;
+    margin-bottom:10px;
+}
+
+.contact-item span{
+    display:block;
+}
+
+/* FOOTER */
+footer{
+    background:#330be6;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.overlay{
+    position:static;
+    transform:none;
+    padding:20px;
+    background:#00000088;
+}
+
+.slider{
+    height:auto;
+}
+
+.contact-container{
+    flex-direction:column;
+}
+}
+```
