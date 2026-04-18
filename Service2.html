@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Support Services</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #28a745;
+            color: white;
+            margin-left: 250px;
+            transition: margin-left 0.3s;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #007bff;
+            padding-top: 20px;
+            transition: width 0.3s;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #0056b3;
+        }
+
+        /* SERVICES SLIDESHOW */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            margin: 40px 0;
+        }
+
+        .mySlides {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 123, 255, 0.8);
+            border-radius: 15px;
+        }
+
+        .mySlides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .service-text {
+            font-size: 20px;
+            margin-top: 15px;
+            color: white;
+        }
+
+        .service-button {
+            background: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .service-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* GALLERY */
+        .gallery {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .images img {
+            width: 100%;
+            border-radius: 15px;
+            transition: 0.4s;
+        }
+
+        .images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .email {
+            background: #0072ff;
+        }
+
+        .contact a:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #007bff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="#location">Location</a>
+</div>
+
+<!-- HEADER -->
+<header>
+    <h1>🎓 Student & IT Support Services</h1>
+    <p>I assist university students and the public with Online Application & IT services professionally and reliably.</p>
+</header>
+
+<!-- SERVICES SLIDESHOW -->
+<section class="slideshow-container" id="services">
+    <div class="mySlides">
+        <img src="https://www.kuccps.net/images/logo.png" alt="KUCCPS Logo">
+        <div class="service-text">
+            <h3>KUCCPS Applications</h3>
+            <p>Course revision and KUCCPS placement assistance.</p>
+            <a href="#" class="service-button">Request Service</a>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://www.helb.co.ke/assets/img/logo.png" alt="HELB Logo">
+        <div class="service-text">
+            <h3>HELB Applications</h3>
+            <p>First time loan application, guidance, and follow-up.</p>
+            <a href="#" class="service-button">Request Service</a>
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="https://www.kra.go.ke/images/logo.png" alt="KRA Logo">
+        <div class="service-text">
+            <h3>KRA PIN Registration</h3>
+            <p>Quick KRA PIN registration and Nil Returns filing without stress.</p>
+            <a href="#" class="service-button">Request Service</a>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+    <h2>👩‍🎓 Happy University Students</h2>
+    <div class="images">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>📞 Contact Me</h2>
+    <p>Location: Homa Bay, Kenya</p>
+    <a href="https://wa.me/254703754836" class="whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <a href="mailto:ogeto783gmail@gmail.com" class="email">
+        <i class="fa-solid fa-envelope"></i> Email Me
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Student Support Services | All Rights Reserved
+</footer>
+
+<script>
+// Slideshow functionality
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change slide every 5 seconds
+}
+</script>
+
+</body>
+</html>
