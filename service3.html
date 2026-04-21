@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ogeto Digital Services</title>
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -17,7 +14,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
@@ -25,30 +21,62 @@ background:#0f172a;
 color:white;
 }
 
+/* ================= HEADER ================= */
+.header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:60px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.header .info{
+font-size:14px;
+opacity:0.9;
+}
+
+.menu-btn{
+font-size:22px;
+cursor:pointer;
+color:#25D366;
+}
+
 /* ================= SIDEBAR ================= */
 .sidebar{
 position:fixed;
+top:60px;
+left:0;
 width:260px;
 height:100vh;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(15px);
-border-right:1px solid rgba(255,255,255,0.1);
 padding:20px;
+transition:0.3s;
+overflow:hidden;
+}
+
+.sidebar.hide{
+width:0;
+padding:0;
+opacity:0;
 }
 
 .logo{
 text-align:center;
-margin-bottom:30px;
+margin-bottom:20px;
 }
 
 .logo i{
-font-size:45px;
+font-size:40px;
 color:#25D366;
-}
-
-.logo h2{
-font-size:18px;
-margin-top:10px;
 }
 
 .sidebar a{
@@ -64,17 +92,23 @@ transition:0.3s;
 .sidebar a:hover{
 background:#25D366;
 color:black;
-transform:translateX(8px);
+transform:translateX(5px);
 }
 
 /* ================= MAIN ================= */
 .main{
 margin-left:260px;
+padding-top:80px;
+transition:0.3s;
+}
+
+.main.full{
+margin-left:0;
 }
 
 /* ================= HERO ================= */
 .hero{
-height:100vh;
+height:90vh;
 background:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') center/cover;
 display:flex;
 flex-direction:column;
@@ -87,8 +121,7 @@ position:relative;
 .hero::before{
 content:"";
 position:absolute;
-top:0;left:0;
-width:100%;height:100%;
+inset:0;
 background:rgba(0,0,0,0.6);
 }
 
@@ -98,13 +131,7 @@ z-index:1;
 }
 
 .hero h1{
-font-size:50px;
-font-weight:700;
-}
-
-.hero p{
-margin:10px 0;
-opacity:0.9;
+font-size:48px;
 }
 
 .btn{
@@ -113,8 +140,8 @@ border-radius:30px;
 text-decoration:none;
 font-weight:600;
 margin:10px;
-transition:0.3s;
 display:inline-block;
+transition:0.3s;
 }
 
 .whatsapp{
@@ -124,7 +151,6 @@ color:black;
 
 .whatsapp:hover{
 transform:scale(1.1);
-box-shadow:0 0 20px #25D366;
 }
 
 /* ================= SECTIONS ================= */
@@ -134,11 +160,11 @@ padding:70px 40px;
 
 .title{
 text-align:center;
-font-size:30px;
-margin-bottom:40px;
+font-size:28px;
+margin-bottom:30px;
 }
 
-/* ================= SERVICES (BACKGROUND STYLE) ================= */
+/* ================= SERVICES ================= */
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -161,7 +187,7 @@ transform:scale(1.03);
 
 .overlay{
 position:absolute;
-top:0;left:0;right:0;bottom:0;
+inset:0;
 background:rgba(0,0,0,0.65);
 display:flex;
 flex-direction:column;
@@ -169,17 +195,6 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-}
-
-.overlay h3{
-font-size:20px;
-margin-bottom:10px;
-}
-
-.overlay p{
-font-size:13px;
-opacity:0.9;
-margin-bottom:15px;
 }
 
 /* ================= STATS ================= */
@@ -194,12 +209,6 @@ text-align:center;
 background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:15px;
-backdrop-filter:blur(10px);
-}
-
-.stat h2{
-color:#25D366;
-font-size:30px;
 }
 
 /* ================= STUDENTS ================= */
@@ -213,7 +222,7 @@ gap:15px;
 width:100%;
 height:150px;
 object-fit:cover;
-border-radius:12px;
+border-radius:10px;
 transition:0.3s;
 }
 
@@ -223,13 +232,12 @@ transform:scale(1.08);
 
 /* ================= TESTIMONIALS ================= */
 .testimonial-box{
-max-width:650px;
+max-width:600px;
 margin:auto;
 background:rgba(255,255,255,0.05);
-padding:30px;
+padding:25px;
 border-radius:15px;
 text-align:center;
-backdrop-filter:blur(10px);
 }
 
 .testimonial{
@@ -255,39 +263,46 @@ background:#25D366;
 color:black;
 padding:16px;
 border-radius:50%;
-font-size:25px;
-box-shadow:0 0 20px rgba(37,211,102,0.6);
+font-size:24px;
 animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
-0%{transform:scale(1);}
 50%{transform:scale(1.1);}
-100%{transform:scale(1);}
 }
 
-/* ================= FOOTER ================= */
-footer{
-text-align:center;
-padding:20px;
-background:#020617;
-}
-
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
-.sidebar{width:200px;}
-.main{margin-left:200px;}
+.sidebar{width:220px;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<div class="header">
+<div class="menu-btn" onclick="toggleSidebar()">
+<i class="fa fa-bars"></i>
+</div>
+
+<div class="info">
+📍 Ogeto Digital Services | Student Support | Kenya 🇰🇪
+</div>
+
+<div>
+<a href="https://wa.me/254703754836" style="color:#25D366;font-weight:600;text-decoration:none;">
+WhatsApp
+</a>
+</div>
+</div>
+
 <!-- SIDEBAR -->
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
+
 <div class="logo">
 <i class="fa-solid fa-graduation-cap"></i>
-<h2>Ogeto Digital Services</h2>
+<h3>ODS</h3>
 </div>
 
 <a href="#home">🏠 Home</a>
@@ -296,45 +311,36 @@ background:#020617;
 <a href="#students">🎓 Students</a>
 <a href="#testimonials">⭐ Testimonials</a>
 <a href="#contact">📞 Contact</a>
+
 </div>
 
 <!-- MAIN -->
-<div class="main">
+<div class="main" id="main">
 
 <!-- HERO -->
 <section class="hero" id="home">
-<h1>Ultra Premium Student Support</h1>
-<p>KUCCPS • HELB • KRA PIN • Admission • IT Services</p>
-<a href="https://wa.me/254703754836" class="btn whatsapp">💬 Chat on WhatsApp</a>
+<h1>Premium Student Support</h1>
+<p>KUCCPS • HELB • KRA PIN • IT Services</p>
+<a href="https://wa.me/254703754836" class="btn whatsapp">Chat on WhatsApp</a>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2 class="title">Premium Services</h2>
+<h2 class="title">Services</h2>
 
 <div class="services">
 
 <div class="service-bg" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644');">
 <div class="overlay">
 <h3>KUCCPS Applications</h3>
-<p>Course revision, placement & university application support.</p>
-<a class="btn whatsapp" href="https://wa.me/254703754836">Request</a>
+<a href="https://wa.me/254703754836" class="btn whatsapp">Request</a>
 </div>
 </div>
 
 <div class="service-bg" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f');">
 <div class="overlay">
 <h3>HELB Applications</h3>
-<p>Loan application, renewal & tracking assistance.</p>
-<a class="btn whatsapp" href="https://wa.me/254703754836">Request</a>
-</div>
-</div>
-
-<div class="service-bg" style="background-image:url('https://images.unsplash.com/photo-1556741533-f6acd647d2fb');">
-<div class="overlay">
-<h3>KRA PIN Services</h3>
-<p>PIN registration, reset & tax filing support.</p>
-<a class="btn whatsapp" href="https://wa.me/254703754836">Request</a>
+<a href="https://wa.me/254703754836" class="btn whatsapp">Request</a>
 </div>
 </div>
 
@@ -343,41 +349,25 @@ background:#020617;
 
 <!-- STATS -->
 <section id="stats">
-<h2 class="title">Trusted Results</h2>
+<h2 class="title">Impact</h2>
 
 <div class="stats">
-<div class="stat">
-<h2>500+</h2>
-<p>Students Helped</p>
-</div>
-
-<div class="stat">
-<h2>98%</h2>
-<p>Success Rate</p>
-</div>
-
-<div class="stat">
-<h2>24/7</h2>
-<p>Support</p>
-</div>
-
-<div class="stat">
-<h2>7+</h2>
-<p>Services</p>
-</div>
+<div class="stat">500+ Students</div>
+<div class="stat">98% Success</div>
+<div class="stat">24/7 Support</div>
 </div>
 </section>
 
 <!-- STUDENTS -->
 <section id="students">
-<h2 class="title">Successful Students</h2>
+<h2 class="title">Students</h2>
 
 <div class="students">
 <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
 <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
 <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
-<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998">
 <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1f3">
+<img src="https://images.unsplash.com/photo-1531482615713-2afd69097998">
 <img src="https://images.unsplash.com/photo-1544717305-2782549b5136">
 <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61">
 </div>
@@ -388,34 +378,29 @@ background:#020617;
 <h2 class="title">Testimonials</h2>
 
 <div class="testimonial-box">
-
-<div class="testimonial active">⭐⭐⭐⭐⭐ "Very fast KUCCPS help!" - Brian</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ "HELB approved instantly." - Sharon</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ "Best KRA PIN service." - Kevin</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ "Reliable and fast." - David</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ "Highly recommended." - Mercy</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ "Very professional." - Peter</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ "Excellent service." - Anne</div>
-
+<div class="testimonial active">⭐⭐⭐⭐⭐ "Very fast KUCCPS help" - Brian</div>
+<div class="testimonial">⭐⭐⭐⭐⭐ "HELB approved quickly" - Sharon</div>
+<div class="testimonial">⭐⭐⭐⭐⭐ "Best service" - Kevin</div>
 </div>
 </section>
-
-<!-- FOOTER -->
-<footer>
-© 2026 Ogeto Digital Services | Premium Student Support
-</footer>
 
 </div>
 
 <!-- FLOAT WHATSAPP -->
-<a class="float-wa" href="https://wa.me/254703754836">
+<a href="https://wa.me/254703754836" class="float-wa">
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <script>
+// SIDEBAR TOGGLE
+function toggleSidebar(){
+document.getElementById("sidebar").classList.toggle("hide");
+document.getElementById("main").classList.toggle("full");
+}
+
 // TESTIMONIAL SLIDER
-let i=0;
-let t=document.querySelectorAll(".testimonial");
+let i = 0;
+let t = document.querySelectorAll(".testimonial");
 
 setInterval(()=>{
 t.forEach(x=>x.classList.remove("active"));
@@ -426,4 +411,4 @@ t[i].classList.add("active");
 </script>
 
 </body>
-</html>
+  </html>
